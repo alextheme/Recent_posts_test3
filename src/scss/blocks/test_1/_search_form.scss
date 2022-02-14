@@ -1,0 +1,45 @@
+.search_form {
+  position: relative;
+  
+  .search_form__label {
+    align-self: flex-end;
+    margin: 0 0 32px 0;
+  }
+
+  .search_form__input {
+    width: 340px;
+    height: 60px;
+    border: 1px solid $color-input-border;
+    border-radius: 4px;
+    color: $color_title;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 0 0 60px;
+    @include transition();
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color_accent;
+      @include transition();
+    }
+  }
+
+  .search_form__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(20px, -48%);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media screen and (max-width: $point_2) {
+  .search_form {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, -10px);
+  }
+}

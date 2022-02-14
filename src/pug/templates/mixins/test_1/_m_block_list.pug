@@ -1,0 +1,22 @@
+mixin block(gl_class, elem)
+	article(class= `${gl_class}__item`)
+		if (elem.icon || elem.title)
+			div(class= `${gl_class}__title_box`)
+				if (elem.icon)
+					+image_box({ gl_class: `${gl_class}__icon`, src: `${elem.icon}` })
+				if (elem.title)
+					h3(class= `${gl_class}__title`)= elem.title
+		if (elem.items)
+			ul(class= `${gl_class}__sub_list`)
+				each el in elem.items 
+					- url = el.src || '#'
+					li(class= `${gl_class}__sub_item`)
+						a(class= `${gl_class}__sub_link` href= url)= el.label
+
+
+
+mixin block_list(list)
+	- gl_class = 'block'
+	ul(class= `${gl_class}__list`)
+		each elem in list
+			li: +block(gl_class, elem)
