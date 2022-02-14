@@ -172,10 +172,9 @@ svg {
 }
 
 .sidebar__search-form {
-  // margin: 0 0 36px 0;
+  position: relative;
   
   .search-form__label {
-    position: relative;
     align-self: flex-end;
     margin: 0 0 32px 0;
   }
@@ -266,7 +265,7 @@ svg {
   font-size: 24px;
   line-height: 34px;
   font-weight: 300;
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
 
 .sidebar__blog_img_item {

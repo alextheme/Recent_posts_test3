@@ -70,7 +70,8 @@ mixin blog_image(data)
 			- url = data.src || '#'
 			li 
 				figure(class= `${data.gl_class}__blog_img_item`)
-					a(class= `${data.gl_class}__blog_img_link` href= url)
-						figcaption(class= `${data.gl_class}__blog_img_title`)= blog.title
-						if (blog.img)
+					figcaption(class= `${data.gl_class}__blog_img_title`)
+						a(class= `${data.gl_class}__blog_img_link` href= url)= blog.title
+					if (blog.img)
+						a(class= `${data.gl_class}__blog_img_link` href= url)
 							+image_box({ gl_class: 'blog-item__image', src: `${blog.img}` })
