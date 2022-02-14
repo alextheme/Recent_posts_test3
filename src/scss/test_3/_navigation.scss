@@ -1,0 +1,149 @@
+$nav_height: 60px;
+
+@mixin transition($prop: all, $duration: 300ms, $func: ease-in-out) {
+	transition: $prop $duration $func;
+}
+
+a {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	color: inherit;
+	cursor: pointer;
+}
+
+.top-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: $nav_height;
+	text-transform: uppercase;
+	background-color: $nav_bg;
+	color: $color_title;
+	border-radius: 4px;
+	padding: 0 32px;
+	margin: 0 0 40px 0;
+}
+
+.top-nav__tag-list {
+	display: flex;
+	position: relative;
+	overflow-x: hidden;
+  max-width: 81%;
+
+	&:hover {
+		overflow-x: auto;
+		margin-bottom: -8px;
+
+		&::-webkit-scrollbar {
+			height: 8px;             
+		}
+		
+		&::-webkit-scrollbar-track {
+			background: rgba(238, 238, 238, 0.637); 
+		}
+		
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba(155, 155, 155, 0.144);
+			border-radius: 20px;
+			border: none; 
+		}
+	}
+}
+
+//- tags
+.top-nav__tag-label  {
+	height: $nav_height;
+	line-height: $nav_height;
+	padding: 0 18px 0 0;
+
+	&--active {
+		font-weight: 700;
+	}
+}
+
+.top-nav__tag-item  {
+	line-height: $nav_height;
+}
+
+.top-nav__tag-link {
+	padding: 0 18px;
+	color: $color_accent;
+	@include transition(background-color);
+
+	&--active {
+		font-weight: 700;
+		background-color: $nav_bg_hover;
+		cursor: default;
+	}
+
+	&:hover {
+		text-decoration: none;
+		background-color: $nav_bg_hover;
+		@include transition(background-color);
+	}
+}
+//- tags###
+
+//- menu
+.top-nav__list  {
+	display: flex;
+}
+
+.top-nav__item {
+	line-height: $nav_height;
+
+	.top-nav__link {
+		cursor: pointer;
+	}
+
+	&--active_mod .top-nav__link {
+		font-weight: 700;
+		cursor: default;
+		background-color: $nav_bg_hover;
+	}
+}
+
+.top-nav__link {
+	padding: 0 18px;
+
+	&:hover {
+		text-decoration: none;
+		// cursor: default;
+		background-color: $nav_bg_hover;
+		@include transition(background-color);
+	}
+}
+//- menu###
+
+//- respons
+@media screen and (max-width: $point_2) { // 1024
+	.content {
+		flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+	}
+
+	.posts__list .posts__item {
+		margin: 0;
+	}
+
+	.sidebar {
+		position: unset;
+	}
+}
+@media screen and (max-width: $point_4) { // 768
+	.content {
+		flex-direction: column;
+    max-width: 98%;
+    margin: 0 auto;
+	}
+}
+@media screen and (max-width: $point_5) { // 640
+	.top-nav {
+		flex-direction: column-reverse;
+		height: 120px;
+	}
+}
+

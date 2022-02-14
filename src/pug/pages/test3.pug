@@ -1,0 +1,151 @@
+//- extends ../layout/_layout
+extends ../layout/_layout
+
+block vars
+	- array = {body_class:'task-test-3', layout_mod:'', sub_keywords:'', title_inner:'Index'}
+	- icon = "../../images/icons/other_icons/comment.svg"
+
+block content_block
+	.page_wrap
+		nav.top-nav
+			+tagList({
+				gl_class: 'top-nav',
+				label: 'tags:',
+				items: [
+					{ url: '##', title: 'bitcoin'},
+					{ title: 'bittorrent'},
+					{ title: 'irc'},
+					{ title: 'news'},
+					{ title: 'privacy'},
+					{ title: 'programming'},
+					{ title: 'security'},
+					{ title: 'programming'},
+					{ title: 'security'}
+				],
+			})
+			+menu({
+				gl_class: 'top-nav',
+				items: [
+					{ url: '##', title: 'team'},
+					{ title: 'contacts'}
+				],
+			})
+
+		.content 
+			main.content.posts 
+				h1.posts__header Recent posts
+				ul.posts__list
+					+posts({
+						gl_class: 'posts',
+						url: '###',
+						img: '../../images/post-1.jpg',
+						title: 'The Internet Cannot be Trusted – Beamsplitters, Backdoors, and Broken Promises',
+						author_name: 'Derek Zimmer',
+						author_date: 'JUL 25, 2018',
+						tags: 'Governments, Networking, Open Source, Privacy, Security',
+						comments_count: 10,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+					+posts({
+						gl_class: 'posts',
+						url: '#',
+						img: '../../images/post-2.jpg',
+						title: 'How to get cheaper flights using a VPN',
+						author_name: 'Jayson',
+						author_date: 'JUL 24, 2018',
+						tags: 'Guides',
+						comments_count: 6,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+					+posts({
+						gl_class: 'posts',
+						img: '../../images/post-3.jpg',
+						title: 'Net Neutrality was repealed, but the fight is far from over',
+						author_name: 'Chris Miller',
+						author_date: 'JUL 22, 2018',
+						tags: 'Governments, Net Neutrality, News',
+						comments_count: 21,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+					+posts({
+						gl_class: 'posts',
+						img: '../../images/post-1.jpg',
+						title: 'The Internet Cannot be Trusted – Beamsplitters, Backdoors, and Broken Promises',
+						author_name: 'Derek Zimmer',
+						author_date: 'JUL 25, 2018',
+						tags: 'Governments, Networking, Open Source, Privacy, Security',
+						comments_count: 10,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+					+posts({
+						gl_class: 'posts',
+						img: '../../images/post-2.jpg',
+						title: 'How to get cheaper flights using a VPN',
+						author_name: 'Jayson',
+						author_date: 'JUL 24, 2018',
+						tags: 'Guides',
+						comments_count: 6,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+					+posts({
+						gl_class: 'posts',
+						img: '../../images/post-3.jpg',
+						title: 'Net Neutrality was repealed, but the fight is far from over',
+						author_name: 'Chris Miller',
+						author_date: 'JUL 22, 2018',
+						tags: 'Governments, Net Neutrality, News',
+						comments_count: 21,
+						comments_icon: '../../images/icons/comment-icon.png',
+					})
+
+				button.older-posts older posts
+
+			aside.content.sidebar
+				.sidebar__wrap
+					form.sidebar__search-form
+						label(class="search-form__label")
+							+image_box({ gl_class: 'search-form', src: './images/icons/search.png' })
+							input(class="search-form__input" type= "text" placeholder= "Search blog")
+
+					+blog_list({ 
+						gl_class: 'sidebar',
+						items: [
+							{
+								icon: './images/icons/bell.png',
+								title: 'Announcements',
+								items: [
+									{ label: 'Upcoming Changes (Live Chat, Less Censorship, More Access)' },
+									{ label: 'New Servers (US Washington DC)' },
+									{ label: 'New Servers (US Denver)' },
+									{ label: 'Open Source: Releasing the PIA iOS Client' },
+									{ label: 'Opera Extension is now available' }
+								],
+							},
+							{
+								icon: './images/icons/rss.png',
+								title: 'Popular posts',
+								items: [
+									{ label: 'The Gift of Privacy', src: 'http://gootle.com' },
+									{ label: 'UK High Court Censors Many Links To Popcorn Time: Useless, Dangerous Gesture' },
+									{ label: 'About the PIA Client Security and VPN Security in General' },
+									{ label: 'A Private Net Is Just As Fundamental A Right As Freedom Of Speech' },
+									{ label: 'Wiretapping Today Just Doesn\'t Mean What The Word Meant In The 1990s, So Don’t Fall For That Lie' }
+								],
+							}
+						]
+					})
+
+					+blog_image({ 
+						gl_class: 'sidebar',
+						items: [
+							{
+								img: './images/blog-1.jpg',
+								src: 'http://alextheme.github.io'
+							}, 
+							{
+								title: 'Tag cloud',
+								img: './images/blog-2.jpg',
+								src: ''
+							}
+						]
+					})

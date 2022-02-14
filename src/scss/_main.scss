@@ -1,0 +1,15 @@
+@import "./test_3/navigation";
+@import "./test_3/content-box";
+
+.page_wrap {
+	max-width: 98%;
+	width: 1200px;
+	margin: 0 auto;
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
