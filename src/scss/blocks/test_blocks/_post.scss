@@ -1,20 +1,29 @@
 .post__item {
   display: flex;
   align-self: flex-start;
-  min-height: 240px;
-  margin: 0 60px 0 0;
-  padding: 30px 0;
+  min-height: 24rem;
+  margin: 0 6rem 0 0;
+  padding: 3rem 0;
   border-bottom: 1px solid $color-border;
+
+  @media screen and (max-width: $point_5) { // 640
+    flex-direction: column;
+    margin: 0;
+
+    .post__description {
+      margin: 2rem 0 0 0;
+    }
+  }
 }
 
-.post__img-box {
+.post__img_box {
   position: relative;
   z-index: 1;
-  min-width: 280px;
-  width: 280px;
-  height: 180px;
+  min-width: 28rem;
+  width: 28rem;
+  height: 18rem;
   background-color: $color_lightgray;
-  margin: 0 20px 0 0;
+  margin: 0 4rem 0 0;
   cursor: pointer;
   @include transition();
 
@@ -24,7 +33,7 @@
     top: 50%;
     left: 50%;
     content: 'no image';
-    font-size: 20px;
+    font-size: 2rem;
     white-space: nowrap;
     color: $color_grey;
     transform: translate(-50%, -50%);
@@ -34,6 +43,12 @@
     opacity: .8;
     @include transition();
   }
+
+  @media screen and (max-width: $point_5) {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
 }
 
 .post__description {
@@ -42,25 +57,25 @@
 
 .post__title {
   margin: 0 0 18px 0;
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 300;
-  line-height: 34px;
+  line-height: 3.4rem;
   color: inherit;
 }
 
 .post__athror {
-  margin: 0 0 12px 0;
+  margin: 0 0 1.2rem 0;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 2.2rem;
   color: $color_text;
 }
 
-.post__athror-date {
+.post__athror_date {
   position: relative;
   text-transform: uppercase;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 2rem;
   color: $color_grey;
 
   &::before {
@@ -68,13 +83,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-10px, -3px);
+    transform: translate(-1rem, -.3rem);
   }
 }
 
 .post__tags {
-  margin: 0 0 18px 0;
-  font-size: 12px;
+  margin: 0 0 1.8rem 0;
+  font-size: 1.2rem;
   font-weight: 400;
   color: $color_accent;
   text-transform: uppercase;
@@ -84,16 +99,18 @@
   display: flex;
   align-items: center;
   color: $color_grey;
+
+  .icon {
+    width: 1.115rem;
+    height: 1.061rem;
+    fill: $color_grey;
+    background: none;
+  }
 }
 
-.post__count-comments {
-  margin: 0 10px 0 0;
-  font-size: 14px;
+.post__count_comments {
+  margin: 0 1rem 0 0;
+  font-size: 1.4rem;
   font-weight: 400;
   color: $color_grey;
-}
-
-.post__icon-conmments img {
-  width: 12px;
-  height: 12px;
 }

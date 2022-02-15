@@ -18,7 +18,7 @@
 
 	&:before {
 		content: '';
-		border-radius: 2px;
+		border-radius: $gl_radius;
 		border: 1px solid $black;
 	}
 

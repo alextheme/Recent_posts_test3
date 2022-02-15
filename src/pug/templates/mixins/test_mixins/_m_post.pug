@@ -1,0 +1,34 @@
+
+mixin post(class_name, post)
+	- gl_class = class_name ? class_name : 'posts'
+	- url = post.url ? post.url : '#'
+	li(class= `${gl_class}__item`)
+		div(class= `${gl_class}__img_box`)
+			a(class= `${gl_class}__link` href= url)
+				+picture({
+					typeJpeg: false,
+					png: false,
+					media: 1024,
+					is2x: false,
+					contain: true,
+					class: `${gl_class}__img`,
+					img: `${post.img}`,
+					img_mob: `${post.img}`
+				})
+		div(class= `${gl_class}__description`)
+			h2(class= `${gl_class}__title`)
+				a(class= `${gl_class}__link` href= url)= post.title
+			div(class= `${gl_class}__athror`)= post.author_name
+				span(class= `${gl_class}__athror_date`)= post.author_date
+			div(class= `${gl_class}__tags`)= post.tags
+			div(class= `${gl_class}__comments`) 
+				span(class= `${gl_class}__count_comments`)= post.comments_count
+				+icon('comment')
+
+
+mixin posts(items)
+	- gl_class = 'post'
+	ul(class= `${gl_class}__list`)
+		each item in items
+			+post(gl_class, item)
+			

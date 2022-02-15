@@ -1,0 +1,24 @@
+mixin block(gl_class, elem)
+	if (elem.icon || elem.title)
+		div(class= `${gl_class}__title_box`)
+			if (elem.icon)
+				div(class= `${gl_class}__icon_box`)
+					+icon(elem.icon)
+			if (elem.title)
+				h3(class= `${gl_class}__title`)= elem.title
+	if (elem.items)
+		ul(class= `${gl_class}__sub_list`)
+			each el in elem.items 
+				- url = el.src || '#'
+				li(class= `${gl_class}__sub_item`)
+					a(class= `${gl_class}__sub_link` href= url)= el.label
+
+
+
+mixin block_list(gl_class, list)
+	- gl_class = gl_class ? gl_class : ''
+	- local_class = 'block'
+	ul(class= `${gl_class} ${gl_class}__list`)
+		each elem in list
+			li(class= `${local_class} ${local_class}__item`)
+				+block(local_class, elem)

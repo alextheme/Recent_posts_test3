@@ -1,4 +1,4 @@
-$nav_height: 60px;
+$nav_height: 6rem;
 
 @mixin transition($prop: all, $duration: 300ms, $func: ease-in-out) {
 	transition: $prop $duration $func;
@@ -12,7 +12,7 @@ a {
 	cursor: pointer;
 }
 
-.top-nav {
+.top_nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -21,20 +21,22 @@ a {
 	text-transform: uppercase;
 	background-color: $nav_bg;
 	color: $color_title;
-	border-radius: 4px;
-	padding: 0 32px;
-	margin: 0 0 40px 0;
+	border-radius: $gl_radius;
+	padding: 0 1.4rem;
+	margin: 0 0 4rem 0;
+	overflow: hidden;
 }
 
-.top-nav__tag-list {
+.top_nav__tag_list {
 	display: flex;
 	position: relative;
 	overflow-x: hidden;
+	overflow-y: hidden;
   max-width: 81%;
+	height: 6rem;
 
 	&:hover {
 		overflow-x: auto;
-		margin-bottom: -8px;
 
 		&::-webkit-scrollbar {
 			height: 8px;             
@@ -46,29 +48,29 @@ a {
 		
 		&::-webkit-scrollbar-thumb {
 			background-color: rgba(155, 155, 155, 0.144);
-			border-radius: 20px;
+			border-radius: 2rem;
 			border: none; 
 		}
 	}
 }
 
 //- tags
-.top-nav__tag-label  {
+.top_nav__tag_label  {
 	height: $nav_height;
 	line-height: $nav_height;
-	padding: 0 18px 0 0;
+	padding: 0 1.8rem;
 
 	&--active {
 		font-weight: 700;
 	}
 }
 
-.top-nav__tag-item  {
+.top_nav__tag_item  {
 	line-height: $nav_height;
 }
 
-.top-nav__tag-link {
-	padding: 0 18px;
+.top_nav__tag-link {
+	padding: 0 1.8rem;
 	color: $color_accent;
 	@include transition(background-color);
 
@@ -86,31 +88,33 @@ a {
 }
 //- tags###
 
+
+
+
 //- menu
-.top-nav__list  {
+.top_nav__list  {
 	display: flex;
 }
 
-.top-nav__item {
+.top_nav__item {
 	line-height: $nav_height;
 
-	.top-nav__link {
+	.top_nav__link {
 		cursor: pointer;
 	}
 
-	&--active_mod .top-nav__link {
+	&--active_mod .top_nav__link {
 		font-weight: 700;
 		cursor: default;
 		background-color: $nav_bg_hover;
 	}
 }
 
-.top-nav__link {
-	padding: 0 18px;
+.top_nav__link {
+	padding: 0 1.8rem;
 
 	&:hover {
 		text-decoration: none;
-		// cursor: default;
 		background-color: $nav_bg_hover;
 		@include transition(background-color);
 	}
@@ -132,18 +136,22 @@ a {
 	.sidebar {
 		position: unset;
 	}
+	.top_nav {
+		flex-direction: column-reverse;
+		height: 12rem;
+		margin: 0 0 14rem 0;
+	}
 }
 @media screen and (max-width: $point_4) { // 768
 	.content {
-		flex-direction: column;
     max-width: 98%;
-    margin: 0 auto;
 	}
 }
-@media screen and (max-width: $point_5) { // 640
-	.top-nav {
+@media screen and (max-width: $point_4) { // 640
+	.top_nav {
 		flex-direction: column-reverse;
-		height: 120px;
+		height: 12rem;
+		margin: 0 0 14rem 0;
 	}
 }
 

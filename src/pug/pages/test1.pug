@@ -1,33 +1,14 @@
 extends ../layout/_layout
 
 block vars
-	- array = {body_class:'task-test-3', layout_mod:'', sub_keywords:'', title_inner:'Index'}
+	- array = {body_class:'task-test-1', layout_mod:'', sub_keywords:'', title_inner:'test_1'}
 	- icon = "../../images/icons/other_icons/comment.svg"
 
 block content_block
 	.page_wrap
-		nav.top-nav
-			+tagList({
-				gl_class: 'top-nav',
-				label: 'tags:',
-				items: [
-					{ title: 'bitcoin'},
-					{ title: 'bittorrent'},
-					{ title: 'irc'},
-					{ title: 'news'},
-					{ title: 'privacy'},
-					{ title: 'programming'},
-					{ title: 'security'}
-				],
-			})
-			+menu({
-				gl_class: 'top-nav',
-				items: [
-					{ url: '#', title: 'team'},
-					{ title: 'contacts'}
-				],
-			})
-
+		nav.top_nav
+			include ../blocks/nav_block
+		
 		.content 
 			main.content.posts 
 				h1.posts__header Recent posts
@@ -38,6 +19,7 @@ block content_block
 			aside.content.sidebar
 				.sidebar__wrap
 					include ../blocks/universal/search_form_block
-					
-					include ../blocks/aside_block					
+
+					.sidebar__blocks
+						include ../blocks/aside_block					
 

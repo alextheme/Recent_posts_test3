@@ -4,11 +4,11 @@ mixin image_box(data)
 
 
 mixin tagList(tagList)
-	dl(class=`${tagList.gl_class}__tag-list `)
-		dt(class= `${tagList.gl_class}__tag-label ${tagList.active ? `${tagList.gl_class}__tag-label--active` : ''}`)= tagList.label
+	dl(class=`${tagList.gl_class}__tag_list `)
+		dt(class= `${tagList.gl_class}__tag_label ${tagList.active ? `${tagList.gl_class}__tag_label--active` : ''}`)= tagList.label
 		each item in tagList.items
 			- url = item.url || '#'
-			dd(class= `${tagList.gl_class}__tag-item `)
+			dd(class= `${tagList.gl_class}__tag_item `)
 				a(href= url class= `${tagList.gl_class}__tag-link ${item.active ? `${tagList.gl_class}__tag-link--active` : ''}`)= item.title
 
 

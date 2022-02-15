@@ -1,0 +1,50 @@
+.sidebar {
+  position: relative;
+  width: 50%;
+  min-width: 40rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .1rem;
+    height: 98%;
+    background-color: $color-border;
+  }
+
+  @media screen and (max-width: $point_2) { // 1024
+    position: unset;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.sidebar__wrap {
+  width: 34rem;
+  margin: 0 0 0 auto;
+
+  @media screen and (max-width: $point_2) { // 1024
+    width: unset;
+    margin: 0;
+  }
+}
+
+.sidebar__blocks {
+  padding: 6rem 0;
+  border-top: 1px solid $color-border;
+
+  .blocks {
+
+    .block {
+      border-bottom: 1px solid #EBECED;
+      padding: 0 0 2rem 0;
+      margin: 0 auto 6rem auto;
+    }
+  }
+}
