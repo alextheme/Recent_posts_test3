@@ -1,6 +1,5 @@
 .posts__header {
   align-self: flex-start;
-  // margin: .4rem 0 1.2rem 0;
   font-size: 3.2rem;
   font-weight: 300;
 
@@ -12,7 +11,7 @@
 
 .post__list {
   width: 100%;
-  margin: 1.3rem 0 0 0;
+  margin-top: 1.3rem;
 }
 
 .post__item { 
@@ -32,7 +31,7 @@
 
     .post__description {
       width: 100%;
-      margin: 2rem 0 0 0;
+      margin-top: 2rem;
       padding: 0;
     }
   }
@@ -42,11 +41,11 @@
   width: $post_img_width;
   cursor: pointer;
   margin-right: 4rem;
-  @include transition();
+  @extend %transition_opacity;
 
   &:hover {
     opacity: .8;
-    @include transition();
+    @extend %transition_opacity;
   }
 
   @include bp($point_5) {
@@ -65,12 +64,12 @@
   font-size: 2rem;
   font-weight: 300;
   line-height: 3.4rem;
-  margin: 0 0 18px 0;
+  margin-bottom: 18px;
   color: inherit;
 }
 
 .post__athror {
-  margin: 0 0 1.2rem 0;
+  margin-bottom: 1.2rem;
   text-transform: capitalize;
   font-size: 1.4rem;
   font-weight: 400;
@@ -81,7 +80,7 @@
 .post__athror_date {
   position: relative;
   text-transform: uppercase;
-  margin: 0 0 0 2rem;
+  margin-left: 2rem;
   color: $color_grey;
 
   &::before {
@@ -94,7 +93,7 @@
 }
 
 .post__tags {
-  margin: 0 0 1.8rem 0;
+  margin-bottom: 1.8rem;
   font-size: 1.2rem;
   font-weight: 400;
   color: $color_accent;
@@ -114,7 +113,7 @@
   }
   
   .comma {
-    margin: 0 .5rem 0 0;
+    margin-right: .5rem;
   }
 
   &:last-child {
@@ -136,7 +135,7 @@
 }
 
 .post__count_comments {
-  margin: 0 1rem 0 0;
+  margin-right: 1rem;
   font-size: 1.4rem;
   font-weight: 400;
   color: $color_grey;

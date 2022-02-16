@@ -11,12 +11,12 @@
     border-radius: $gl_radius;
     color: $color_title;
     padding: 0 0 0 6rem;
-    @include transition();
+    @extend %transition_all;
 
     &:focus {
       outline: none;
       border: 1px solid $color_accent;
-      @include transition();
+      @extend %transition_all;
     }
   }
 

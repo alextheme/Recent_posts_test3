@@ -1,7 +1,3 @@
-@mixin transition($prop: all, $duration: 300ms, $func: ease-in-out) {
-	transition: $prop $duration $func;
-}
-
 a {
 	@extend %transition_opacity;
 
@@ -30,7 +26,7 @@ img {
 .content {
 	@extend %global_flex_block_row_wrap_flex-start;
 	width: 100%;
-	margin: 4rem 0 0 0;
+	margin-top: 4rem;
 }
 
 
@@ -38,7 +34,7 @@ img {
 	position: relative;
 	@extend %global_flex_block_column_wrap_flex-start_center;
 	width: calc(100% - $sidebar_width - 11rem);
-	margin: 0 11rem 0 0;
+	margin-right: 11rem;
 	color: $color_title;
 
 	&::before {
@@ -55,47 +51,54 @@ img {
 
 .older_posts {
 	width: 26rem;
-	height: 4rem;
-	margin: 4rem 0 0 0;
+	
+	margin-top: 4rem;
+	
 	font-size: 1.4rem;
 	font-weight: 500;
+	line-height: 4rem;
+	white-space: nowrap;
+	
 	color: $color_accent;
 	border: 1px solid $color_accent;
 	background-color: $white;
 	border-radius: 5rem;
 	cursor: pointer;
-	@include transition();
-
+	
+	
 	&:hover {
 		background-color: $color_accent;
 		color: $white;
-		@include transition();
+		@extend %transition_color_background;
+	}
+	
+	@extend %transition_color_background;
+
+	@include bp($point_7) {
+		width: auto;
+		padding: 0 4rem;
 	}
 }
 
 //- response
 @include bp($point_2) {
 	.content {
-		flex-direction: column;
+		display: inline-block;
 	}
 
 	.content__posts {
 		width: 100%;
-		padding: 0 0 4rem 0;
-		margin: 0 0 5rem 0;
-		border-bottom: 1px solid $color-border;
-	}
 
-	.block__list {
-		display: grid;
-		grid-template-columns: calc(50% - 5rem/2) calc(50% - 5rem/2);
-		gap: 0 5rem;
+		padding-bottom: 4rem;
+		margin: 10rem 0 5rem 0;
+		
+		border-bottom: 1px solid $color-border;
 	}
 }
 
 @include bp($point_5) {
 	.sidebar {
-		min-width: 100%;
+		width: 100%;
 	}
 
 	.block__list {
@@ -108,14 +111,3 @@ img {
 	}
 }
 
-@include bp($point_7) {
-	.sidebar__search-form,
-	.search-form__input {
-		max-width: 27rem;
-	}
-
-	.older_posts {
-		width: auto;
-		padding: 0 4rem;
-	}
-}

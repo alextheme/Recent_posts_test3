@@ -1,5 +1,5 @@
 .block__item {
-  margin: 3.6rem 0 0 0;
+  margin-top: 3.6rem;
   border-bottom: none;
 
   @include bp($point_5) {
@@ -16,7 +16,7 @@
     @extend %global_flex_block_row_wrap_flex-start_center;
     width: 6rem;
     height: 6rem;
-    margin: 0 2rem 0 0;
+    margin-right: 2rem;
     overflow: hidden;
 
     .icon {
@@ -34,7 +34,7 @@
 }
 
 .block__sub_list {
-  margin: 2rem 0 0 0;
+  margin-top: 2rem;
 }
 
 .block__sub_item {

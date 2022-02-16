@@ -7,12 +7,12 @@
 }
 
 .sidebar__blocks {
-  margin: 3.2rem 0 0 0;
+  margin-top: 3.2rem;
 
   .blocks {
 
     .block {
-      padding: 0 0 3.8rem 0;
+      padding-bottom: 3.8rem;
       margin: 6rem auto 0 auto;
 
       &.block__item--border_bottom_mod {
@@ -20,11 +20,11 @@
       }
 
       &.block__item--tag_cloud_mod {
-        margin: 2rem auto 0 auto;
+        margin-top: 2rem;
       }
 
       &:first-child {
-        margin: 2rem auto 0 auto;
+        margin-top: 2rem;
       }
 
       @include bp($point_2) {

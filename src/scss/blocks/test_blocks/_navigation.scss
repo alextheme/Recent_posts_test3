@@ -1,9 +1,3 @@
-$nav_height: 6rem;
-
-@mixin transition($prop: all, $duration: 300ms, $func: ease-in-out) {
-	transition: $prop $duration $func;
-}
-
 a {
 	display: inline-block;
 	height: 100%;
@@ -26,7 +20,6 @@ a {
 	@include bp($point_2) {
 		flex-direction: column-reverse;
 		height: 12rem;
-		margin: 0 0 14rem 0;
 	}
 }
 
@@ -72,7 +65,7 @@ a {
 .top_nav__tag_link {
 	padding: 0 1.8rem;
 	color: $color_accent;
-	@include transition(background-color);
+	@extend %transition_background;
 
 	&--active {
 		font-weight: 700;
@@ -83,7 +76,7 @@ a {
 	&:hover {
 		text-decoration: none;
 		background-color: $nav_bg_hover;
-		@include transition(background-color);
+		@extend %transition_background;
 	}
 }
 //- tags###
@@ -111,7 +104,7 @@ a {
 	&:hover {
 		text-decoration: none;
 		background-color: $nav_bg_hover;
-		@include transition(background-color);
+		@extend %transition_background;
 	}
 }
 //- menu###
