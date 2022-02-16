@@ -10,16 +10,15 @@ block content_block
 			include ../blocks/nav_block
 		
 		.content 
-			main.content.posts 
+			main.content__posts 
 				h1.posts__header Recent posts
 				include ../blocks/posts_block
 
-				button.older_posts older posts
+				button.older_posts(type= 'button') older posts
 
-			aside.content.sidebar
-				.sidebar__wrap
-					include ../blocks/universal/search_form_block
+			aside.content__sidebar
+				include ../blocks/universal/search_form_block
 
-					.sidebar__blocks
-						include ../blocks/aside_block					
+				.sidebar__blocks
+					include ../blocks/aside_block					
 

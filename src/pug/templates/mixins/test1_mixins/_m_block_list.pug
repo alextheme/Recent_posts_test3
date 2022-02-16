@@ -12,6 +12,33 @@ mixin block(gl_class, elem)
 				- url = el.src || '#'
 				li(class= `${gl_class}__sub_item`)
 					a(class= `${gl_class}__sub_link` href= url)= el.label
+	if (elem.img)
+		if(elem.img.src)
+			a(href= elem.img.src)
+				+picture({
+					typeJpeg: false,
+					png: false,
+					media: 1024,
+					is2x: false,
+					contain: true,
+					class: `${gl_class}__img`,
+					img: `${elem.img.name}`,
+					img_mob: `${elem.img.name}`
+				})
+		else 
+			+picture({
+				typeJpeg: false,
+				png: false,
+				media: 1024,
+				is2x: false,
+				contain: true,
+				class: `${gl_class}__img`,
+				img: `${elem.img.name}`,
+				img_mob: `${elem.img.name}`
+			})
+
+	if (elem.linksList)
+		+heapLinks(elem.linksList)
 
 
 
@@ -20,5 +47,5 @@ mixin block_list(gl_class, list)
 	- local_class = 'block'
 	ul(class= `${gl_class} ${gl_class}__list`)
 		each elem in list
-			li(class= `${local_class} ${local_class}__item`)
+			li(class= `${local_class} ${local_class}__item${elem.mod ? '--' + elem.mod : ''}`)
 				+block(local_class, elem)

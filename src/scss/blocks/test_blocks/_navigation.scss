@@ -13,9 +13,7 @@ a {
 }
 
 .top_nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@extend %global_flex_block_row_wrap_space_between_center;
 	width: 100%;
 	height: $nav_height;
 	text-transform: uppercase;
@@ -23,34 +21,36 @@ a {
 	color: $color_title;
 	border-radius: $gl_radius;
 	padding: 0 1.4rem;
-	margin: 0 0 4rem 0;
 	overflow: hidden;
+
+	@include bp($point_2) {
+		flex-direction: column-reverse;
+		height: 12rem;
+		margin: 0 0 14rem 0;
+	}
 }
 
 .top_nav__tag_list {
-	display: flex;
+	@extend %global_flex_block_row_nowrap_flex-start;
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: hidden;
   max-width: 81%;
 	height: 6rem;
+	overflow-x: auto;
 
-	&:hover {
-		overflow-x: auto;
-
-		&::-webkit-scrollbar {
-			height: 8px;             
-		}
-		
-		&::-webkit-scrollbar-track {
-			background: rgba(238, 238, 238, 0.637); 
-		}
-		
-		&::-webkit-scrollbar-thumb {
-			background-color: rgba(155, 155, 155, 0.144);
-			border-radius: 2rem;
-			border: none; 
-		}
+	&::-webkit-scrollbar {
+		height: 8px;             
+	}
+	
+	&::-webkit-scrollbar-track {
+		background: rgba(238, 238, 238, 0.637); 
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(155, 155, 155, 0.144);
+		border-radius: 2rem;
+		border: none; 
 	}
 }
 
@@ -60,7 +60,7 @@ a {
 	line-height: $nav_height;
 	padding: 0 1.8rem;
 
-	&--active {
+	&.top_nav__tag_label--active {
 		font-weight: 700;
 	}
 }
@@ -69,7 +69,7 @@ a {
 	line-height: $nav_height;
 }
 
-.top_nav__tag-link {
+.top_nav__tag_link {
 	padding: 0 1.8rem;
 	color: $color_accent;
 	@include transition(background-color);
@@ -89,21 +89,15 @@ a {
 //- tags###
 
 
-
-
 //- menu
 .top_nav__list  {
-	display: flex;
+	@extend %global_flex_block_row_nowrap_flex-start;
 }
 
 .top_nav__item {
 	line-height: $nav_height;
 
-	.top_nav__link {
-		cursor: pointer;
-	}
-
-	&--active_mod .top_nav__link {
+	&.top_nav__item--active_mod .top_nav__link {
 		font-weight: 700;
 		cursor: default;
 		background-color: $nav_bg_hover;
@@ -112,6 +106,7 @@ a {
 
 .top_nav__link {
 	padding: 0 1.8rem;
+	cursor: pointer;
 
 	&:hover {
 		text-decoration: none;
@@ -120,38 +115,3 @@ a {
 	}
 }
 //- menu###
-
-//- respons
-@media screen and (max-width: $point_2) { // 1024
-	.content {
-		flex-direction: column;
-    max-width: 90%;
-    margin: 0 auto;
-	}
-
-	.posts__list .posts__item {
-		margin: 0;
-	}
-
-	.sidebar {
-		position: unset;
-	}
-	.top_nav {
-		flex-direction: column-reverse;
-		height: 12rem;
-		margin: 0 0 14rem 0;
-	}
-}
-@media screen and (max-width: $point_4) { // 768
-	.content {
-    max-width: 98%;
-	}
-}
-@media screen and (max-width: $point_4) { // 640
-	.top_nav {
-		flex-direction: column-reverse;
-		height: 12rem;
-		margin: 0 0 14rem 0;
-	}
-}
-

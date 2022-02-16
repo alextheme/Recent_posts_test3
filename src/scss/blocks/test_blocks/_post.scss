@@ -1,50 +1,55 @@
-.post__item {
-  display: flex;
+.posts__header {
+  align-self: flex-start;
+  // margin: .4rem 0 1.2rem 0;
+  font-size: 3.2rem;
+  font-weight: 300;
+
+  @include bp($point_2) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.post__list {
+  width: 100%;
+  margin: 1.3rem 0 0 0;
+}
+
+.post__item { 
+  @extend %global_flex_block_row_nowrap_flex-start;
   align-self: flex-start;
   min-height: 24rem;
-  margin: 0 6rem 0 0;
   padding: 3rem 0;
   border-bottom: 1px solid $color-border;
 
-  @media screen and (max-width: $point_5) { // 640
+  @include bp($point_2) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  @include bp($point_5) {
     flex-direction: column;
-    margin: 0;
 
     .post__description {
+      width: 100%;
       margin: 2rem 0 0 0;
+      padding: 0;
     }
   }
 }
 
 .post__img_box {
-  position: relative;
-  z-index: 1;
-  min-width: 28rem;
-  width: 28rem;
-  height: 18rem;
-  background-color: $color_lightgray;
-  margin: 0 4rem 0 0;
+  width: $post_img_width;
   cursor: pointer;
+  margin-right: 4rem;
   @include transition();
-
-  &::before {
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    content: 'no image';
-    font-size: 2rem;
-    white-space: nowrap;
-    color: $color_grey;
-    transform: translate(-50%, -50%);
-  }
 
   &:hover {
     opacity: .8;
     @include transition();
   }
 
-  @media screen and (max-width: $point_5) {
+  @include bp($point_5) {
     width: 100%;
     height: auto;
     margin: 0;
@@ -52,14 +57,15 @@
 }
 
 .post__description {
-  width: 100%;
+  width: calc(100% - $post_img_width);
 }
 
-.post__title {
-  margin: 0 0 18px 0;
+.post__title_link {
+  height: unset;
   font-size: 2rem;
   font-weight: 300;
   line-height: 3.4rem;
+  margin: 0 0 18px 0;
   color: inherit;
 }
 
@@ -95,12 +101,33 @@
   text-transform: uppercase;
 }
 
+.post__list_tags {
+  @extend %global_flex_block_row_wrap_flex-start;
+  line-height: 1.6rem;
+}
+
+.post__item_tag {
+  white-space: nowrap;
+
+  a {
+    margin: 0;
+  }
+  
+  .comma {
+    margin: 0 .5rem 0 0;
+  }
+
+  &:last-child {
+    .comma {
+      display: none;
+    }
+  }
+}
+
 .post__comments {
-  display: flex;
-  align-items: center;
   color: $color_grey;
 
-  .icon {
+  .icon_comment  {
     width: 1.115rem;
     height: 1.061rem;
     fill: $color_grey;
