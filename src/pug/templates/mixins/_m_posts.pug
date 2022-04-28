@@ -1,0 +1,32 @@
+mixin posts(items)
+	ul.post__list
+		each item in items
+			- url = item.url ? item.url : '#'
+
+			li.post__item
+				a.post__link(href= url)
+					+picture({
+						typeJpeg: false,
+						png: false,
+						media: 1024,
+						is2x: false,
+						contain: true,
+						class: `post__link_picture`,
+						img: `${item.img}`,
+						img_mob: `${item.img}`
+					})
+
+				.post__description
+					a.post__title_link(href= url)= item.title
+					.athror= item.author_name
+						span.athror_date= item.author_date
+					+tagList({ 
+						gl_class: 'post',
+						items: item.tags,
+						comma: true,
+					})
+					.comments_wrap
+						span.count_comments= item.comments_count
+						span.icon_wrap
+							+icon('comment')
+					

@@ -1,6 +1,6 @@
 //---------------------------------------------fonts
 $font_path: "../fonts/";
-$font_1: 'Roboto', sans-serif;
+$font_1: 'Roboto', Helvetica, Arial, sans-serif;
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
 
@@ -10,19 +10,12 @@ $black: #000;
 
 $color_title: #22252E;
 $color_text: #323642;
-$color_accent: #4CB649;
+$accent: #4CB649;
 
-$color-border: #EBECED;
-$color-input-border: #D7D8D9;
-
-$nav_bg: #F7F7F7;
-$nav_bg_hover: #eeeeee;
-
-$color_lightgray: #d3d3d3;
-$color_grey: #889099;
+$color_border: #EBECED;
 
 $color_text_base: $black;
-$color_link_base:#4aa3df;
+$color_link_base: $color_title;
 $body_bg: $white;
 //---------------------------------------------colors###
 
@@ -36,9 +29,8 @@ $z-index: (
 
 //---------------------------------------------layout
 $page_width: 120rem;
+$bottom_indent: 6rem;
 $sidebar_width: 34rem;
-$post_img_width: 28rem;
-$nav_height: 6rem;
 
 //---------------------------------------------layout###
 

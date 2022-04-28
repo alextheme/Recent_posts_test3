@@ -1,5 +1,7 @@
-
-+posts([
+main.content__posts 
+  h3.posts__header Recent posts
+  
+  +posts([
     {
       url: '#',
       img: 'post-1',
@@ -59,3 +61,6 @@
       comments_icon: './images/icons/comment-icon.png',
     },
   ])
+
+  .button_show_older_posts
+    button.btn_green(type= 'button') older posts

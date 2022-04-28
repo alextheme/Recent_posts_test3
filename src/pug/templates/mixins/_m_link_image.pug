@@ -1,0 +1,15 @@
+mixin link_image(img)
+  - url = img.src || '#'
+
+  .link_image_wrap   
+    a.link_image(href= url)
+      +picture({
+        typeJpeg: false,
+        png: false,
+        media: 1024,
+        is2x: false,
+        contain: true,
+        class: 'picture',
+        img: `${img.name}`,
+        img_mob: `${img.name}`
+      })

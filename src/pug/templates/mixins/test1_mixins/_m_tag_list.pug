@@ -1,9 +1,0 @@
-mixin tagList(tagList)
-	ul(class=`${tagList.gl_class}__tag_list `)
-		li(class= `${tagList.gl_class}__tag_label ${tagList.active ? `${tagList.gl_class}__tag_label--active` : ''}`)= tagList.label
-		
-		each item in tagList.items
-			- url = item.url || '#'
-			li(class= `${tagList.gl_class}__tag_item `)
-				a(href= url class= `${tagList.gl_class}__tag_link ${item.active ? `${tagList.gl_class}__tag_link--active` : ''}`)= item.title
-

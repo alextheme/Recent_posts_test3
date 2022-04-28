@@ -2,3 +2,11 @@
 // 	@extend %blue_btn_1;
 // 	@extend %btn_size_1;
 // }
+
+.btn_green {
+	@extend %btn_green_1;
+	
+	@include bp($point_7) {
+		min-width: 100%;
+	}
+}

@@ -1,0 +1,13 @@
+mixin links_order(gl_class, elem)
+	div(class= `links_order ${gl_class}`)
+		div(class= `title_wrap ${gl_class}__title_wrap`)
+			div(class= `icon_wrap ${gl_class}__icon_wrap`)
+				+icon(elem.icon)
+			h3(class= `title ${gl_class}__title`)= elem.title
+		
+		ul(class= `list ${gl_class}__list`)
+			each item in elem.items 
+				- url = item.src || '#'
+				li(class= `item ${gl_class}__item`)
+					a(class= `link ${gl_class}__link` href= url)= item.label
+

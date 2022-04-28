@@ -1,0 +1,7 @@
+.sidebar_content {
+  width: $sidebar_width;
+  
+  @include bp($point_2) {
+    width: 100%;
+  }
+}

@@ -1,22 +1,23 @@
-+tagList({
-  gl_class: 'top_nav',
-  label: 'tags:',
-  items: [
-    { title: 'bitcoin'},
-    { title: 'bittorrent'},
-    { title: 'irc'},
-    { title: 'news'},
-    { title: 'privacy'},
-    { title: 'programming'},
-    { title: 'security'},
-    { title: 'irc'},
-  ],
-})
+nav.top_nav
+  +tagList({
+    gl_class: 'top_nav',
+    label: 'tags:',
+    items: [
+      { title: 'bitcoin'},
+      { title: 'bittorrent'},
+      { title: 'irc'},
+      { title: 'news'},
+      { title: 'privacy'},
+      { title: 'programming'},
+      { title: 'security'},
+      { title: 'irc'},
+    ],
+  })
 
-+menu({
-  gl_class: 'top_nav',
-  items: [
-    { url: '#', title: 'team'},
-    { title: 'contacts'}
-  ],
-})
+  +menu({
+    gl_class: 'top_nav',
+    items: [
+      { title: 'team'},
+      { title: 'contacts'}
+    ],
+  })

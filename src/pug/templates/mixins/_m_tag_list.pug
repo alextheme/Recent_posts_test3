@@ -1,0 +1,9 @@
+mixin tagList(tagList)
+	if tagList.label 
+		span(class= `${tagList.gl_class}__tag_label`)= tagList.label
+	
+	ul(class=`${tagList.gl_class}__tag_list `)
+		each item in tagList.items
+			- url = item.url || '#'
+			li(class= `${tagList.gl_class}__tag_item ${tagList.comma ? `${tagList.gl_class}__tag_item--mod_comma` : ''}`)
+				a(href= url class= `${tagList.gl_class}__tag_link ${item.active ? `${tagList.gl_class}__tag_link--active` : ''}`)= item.title ? item.title : item

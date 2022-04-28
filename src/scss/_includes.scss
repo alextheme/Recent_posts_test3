@@ -15,12 +15,18 @@
 @import "forms";
 @import "blocks/sections";
 
-@import "./blocks/test_blocks/navigation";
-@import "./blocks/test_blocks/content_styles";
-@import "./blocks/test_blocks/sidebar";
-@import "./blocks/test_blocks/sidebar_block_lists";
-@import "./blocks/test_blocks/post";
-@import "./blocks/test_blocks/search_form";
+@import "./blocks/nav_block";
+@import "./blocks/content_styles";
+
+@import "./blocks/sidebar";
+@import "./blocks/links_order";
+@import "./blocks/links_heap";
+@import "./blocks/link_image";
+
+
+
+@import "./blocks/post";
+@import "./blocks/search_form";
 
 // base_ui
 @import "base_ui/all_icons";

@@ -1,0 +1,72 @@
+.links_order {
+  width: 100%;
+
+  margin: 0 auto $bottom_indent;
+  padding-bottom: 3.8rem;
+  
+  border-bottom: 1px solid $color_border;
+
+  @include bp($point_2) {
+    width: 80%;
+  }
+
+  .title_wrap {
+    @extend %global_flex_block_row_wrap_flex-start_center;
+
+    margin-bottom: 2rem;
+
+    overflow: hidden;
+
+    .icon_wrap {
+      @extend %global_flex_block_row_wrap_flex-start_center;
+      width: 6rem;
+      height: 6rem;
+      margin-right: 2rem;
+      overflow: hidden;
+
+      .icon {
+        width: 4rem;
+        height: 4rem;
+        background: none;
+        fill: $accent;
+      }
+    }
+    .title {
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+      font-weight: 300;
+    }
+  }
+
+  .list {
+    // dd
+  }
+
+  .item {
+    position: relative;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    margin: 2rem 0 0 1.1rem;
+
+    &::before {
+      content: "";
+      width: .5rem;
+      height: .5rem;
+      border-radius: 50%;
+      position: absolute;
+      background: $accent;
+      top: 50%;
+      left: 0;
+      transform: translate(-1.2rem, -50%);
+    }
+  }
+
+  .links_list__list {
+    li {
+      display: inline-block;
+      
+      line-height: 3rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.link_image_wrap {
+  margin-bottom: 5rem;
+
+  .contain_img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .link_image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+    @include bp($point_2) {
+      width: 80%;
+    }
+  }
+}

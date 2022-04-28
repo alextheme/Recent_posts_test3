@@ -1,0 +1,8 @@
+mixin links_heap(linksList)
+  div(class= `links_heap ${linksList.gl_class}`)
+    h3.links_heap__title= linksList.title
+    ul.links_heap__list
+      each item in linksList.items
+        - src = item.url ? item.url : linksList.base_url ? linksList.base_url : '#' 
+        li.links_heap__item
+          a.links_heap__link(href= src)= item.word

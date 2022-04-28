@@ -39,3 +39,24 @@
 
 	border-radius: $gl_radius;
 }
+
+%btn_green_1 {
+	@extend %transition_color_background;
+
+	min-width: 26rem;
+	min-height: 6rem;
+	
+	font-size: 1.4rem;
+	font-weight: 500;
+	
+	color: $accent;
+	background-color: $white;
+	border: 1px solid $accent;
+	border-radius: calc(6rem / 2);
+	cursor: pointer;
+	
+	&:hover {
+		color: $white;
+		background-color: $accent;
+	}
+}
