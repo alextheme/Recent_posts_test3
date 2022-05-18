@@ -2,12 +2,12 @@
 $color_input_border: #D7D8D9;
 // ----------------------------------------------- variables###
 
-.search_form {
+.form_search {
   position: relative;
   width: 34rem;
   margin-bottom: 3.2rem;
 
-  .search_form__input {
+  .form_search__input {
     @extend %transition_all;
 
     width: 100%;
@@ -30,7 +30,7 @@ $color_input_border: #D7D8D9;
     }
   }
 
-  .search_form__icon_wrap {
+  .form_search__icon_wrap {
     position: absolute;
     top: 50%;
     left: 0;
