@@ -15,7 +15,12 @@
 
 	width: 100%;
 
-	@include bp($point_2) {
+	@include bp($point_1 + 20px) {
+		max-width: 99%;
+    margin: 0 auto;
+	}
+
+  @include bp($point_2) {
 		display: inline-block;
 	}
 }

@@ -18,15 +18,15 @@ mixin posts(items)
 
 				.post__description
 					a.post__title_link(href= url)= item.title
-					.athror= item.author_name
-						span.athror_date= item.author_date
+					.post__athror= item.author_name
+						span.post__athror_date= item.author_date
 					+tagList({ 
 						gl_class: 'post',
 						items: item.tags,
 						comma: true,
 					})
-					.comments_wrap
-						span.count_comments= item.comments_count
-						span.icon_wrap
+					.post__comments_wrap
+						span.count= item.comments_count
+						span.icon_w
 							+icon('comment')
 					
